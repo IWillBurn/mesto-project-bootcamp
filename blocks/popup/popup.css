@@ -1,26 +1,10 @@
 .popup {
-	background-color: white;
-	border-radius: 10px;
+	height: 100%;
+	width: 100%;
+	min-width: 320px;
+	background: rgba(0,0,0,0.5);
 	position: fixed;
-	top: calc(50% - 165px);
-	min-height: 330px;
-	display: flex;
-	flex-direction: column;
-	box-sizing: border-box;
-}
-
-@media screen and (min-width: 320px) {
-	.popup {
-		width: 90%;
-		left: calc(50% - (100vw * 0.45));
-		padding: 25px 22px; 
-	}
-}
-
-@media screen and (min-width: 500px) {
-	.popup {
-		width: 430px;
-		left: calc(50% - 215px);
-		padding: 34px 36px;
-	}
+	left: 0;
+	top: 0;
+	display: none;
 }

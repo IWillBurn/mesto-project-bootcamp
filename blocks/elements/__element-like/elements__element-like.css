@@ -6,8 +6,16 @@
     background-position-y: 50%;
     background-repeat: no-repeat;
     background-size: 22px 19px;
-    background-color: white;
+    background-color: rgba(0,0,0,0);
     transition: background-image opacity 0.3s;
+    opacity: 1;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.elements__element-like:hover {
+    opacity: 0.5;
+    transition: opacity 0.3s;
 }
 
 .elements__element-like:focus {

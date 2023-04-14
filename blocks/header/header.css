@@ -4,13 +4,8 @@
     display: flex;
     justify-content: flex-start;
     box-sizing: border-box;
-    border-bottom: 1px solid #545454;
-}
-
-@media screen and (min-width: 320px) {
-    .header {
-        padding: 0 0 0 28px;
-    }
+    border-bottom: 1px solid rgba(54, 54, 54, 0.7);
+    padding: 0 0 0 28px;
 }
 
 @media screen and (min-width: 908px) {

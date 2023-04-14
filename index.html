@@ -17,59 +17,59 @@
                     <img class="profile__avatar" alt="Аватар" src="./images/profile-avatar.png">
                     <div class="profile__info">
                         <div class="profile__info-main">
-                            <p class="profile__name">
+                            <h1 class="profile__name">
                                 Жак-Ив Кусто
-                            </p>
-                            <button class="profile__edit-button button-opacity" />
+                            </h1>
+                            <button class="profile__edit-button button-opacity" type="button"></button>
                         </div>
                         <p class="profile__about-me">
                             Исследователь океана
                         </p>
                     </div>
                 </div>
-                <button class="profile__add-button button-opacity" />
+                <button class="profile__add-button button-opacity" type="button"></button>
             </section>
             <section class="elements">
                 <div class="elements__element">
                     <img class="elements__element-image" alt="Карачаевск" src="./images/elements-karachaevsk.png">
                     <div class="elements__element-text">
-                        <h3 class="elements__element-title"> Карачаевск </h3>
-                        <button class="elements__element-like button-opacity" />
+                        <h2 class="elements__element-title"> Карачаевск </h2>
+                        <button class="elements__element-like button-opacity" type="button"></button>
                     </div>
                 </div>
                 <div class="elements__element">
-                    <img class="elements__element-image" alt="Карачаевск" src="./images/elements-elbrus.png">
+                    <img class="elements__element-image" alt="Эльбрус" src="./images/elements-elbrus.png">
                     <div class="elements__element-text">
-                        <h3 class="elements__element-title"> Гора Эльбрус </h3>
-                        <button class="elements__element-like button-opacity" />
+                        <h2 class="elements__element-title"> Гора Эльбрус </h2>
+                        <button class="elements__element-like button-opacity" type="button"></button>
                     </div>
                 </div>
                 <div class="elements__element">
-                    <img class="elements__element-image" alt="Карачаевск" src="./images/elements-dombay.png">
+                    <img class="elements__element-image" alt="Домбай" src="./images/elements-dombay.png">
                     <div class="elements__element-text">
-                        <h3 class="elements__element-title"> Домбай </h3>
-                        <button class="elements__element-like button-opacity" />
+                        <h2 class="elements__element-title"> Домбай </h2>
+                        <button class="elements__element-like button-opacity" type="button"></button>
                     </div>
                 </div>
                 <div class="elements__element">
-                    <img class="elements__element-image" alt="Карачаевск" src="./images/elements-elbrus.png">
+                    <img class="elements__element-image" alt="Эльбрус" src="./images/elements-elbrus.png">
                     <div class="elements__element-text">
-                        <h3 class="elements__element-title"> Гора Эльбрус </h3>
-                        <button class="elements__element-like button-opacity" />
+                        <h2 class="elements__element-title"> Гора Эльбрус </h2>
+                        <button class="elements__element-like button-opacity" type="button"></button>
                     </div>
                 </div>
                 <div class="elements__element">
-                    <img class="elements__element-image" alt="Карачаевск" src="./images/elements-dombay.png">
+                    <img class="elements__element-image" alt="Домбай" src="./images/elements-dombay.png">
                     <div class="elements__element-text">
-                        <h3 class="elements__element-title"> Домбай </h3>
-                        <button class="elements__element-like button-opacity" />
+                        <h2 class="elements__element-title"> Домбай </h2>
+                        <button class="elements__element-like button-opacity" type="button"></button>
                     </div>
                 </div>
                 <div class="elements__element">
-                    <img class="elements__element-image" alt="Карачаевск" src="./images/elements-karachaevsk.png">
+                    <img class="elements__element-image" alt="Карачаево-Черкесия" src="./images/elements-karachaevsk.png">
                     <div class="elements__element-text">
-                        <h3 class="elements__element-title"> Карачаево-Черкесия </h3>
-                        <button class="elements__element-like button-opacity" />
+                        <h2 class="elements__element-title"> Карачаево-Черкесия </h2>
+                        <button class="elements__element-like button-opacity" type="button"></button>
                     </div>
                 </div>
             </section>
@@ -80,15 +80,16 @@
             </p>
         </footer>
     </div>
-    <div class="overlay display-none"></div>
-    <div class="popup display-none">
-        <h3 class="popup__title">Редактировать профиль</h3>
-        <form class="popup__form">
-            <input class="popup__input input-animation" value="Жак-Ив Кусто">
-            <input class="popup__input input-animation" value="Исследователь океана">
-            <button class="popup__save-button button-opacity" type="submit">Сохранить</button>
-        </form>
-        <button class="popup__close-button button-opacity" />
+    <div class="popup">
+        <div class="popup__container">
+            <h3 class="popup__title">Редактировать профиль</h3>
+            <form class="popup__form" name="form-profile-changer">
+                <input class="popup__input input-animation" type="text" name="input-name" value="Жак-Ив Кусто">
+                <input class="popup__input input-animation" type="text" name="input-about-me" value="Исследователь океана">
+                <button class="popup__save-button button-opacity" type="submit">Сохранить</button>
+            </form>
+            <button class="popup__close-button button-opacity" type="button"></button>
+        </div>
     </div>
 </body>
 </html>
