@@ -1,0 +1,25 @@
+.profile__edit-button {
+    background-image: url("../../../images/edit-button.svg");
+    height: 24px;
+    width: 24px;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border: none;
+    align-self: center;
+}
+
+@media screen and (min-width: 320px) {
+    .profile__edit-button {
+        position: absolute;
+        right: 0;
+        transform: translate(calc(100% + 18px));
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .profile__edit-button {
+        position: relative;
+        transform: translate(0);
+    }
+}

@@ -1,0 +1,7 @@
+.profile__info-main {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    align-items: end;
+}

@@ -1,0 +1,17 @@
+.elements__element-like {
+    width: 22px;
+    border: none;
+    background-image: url("../../../images/element-like.svg");
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+    background-size: 22px 19px;
+    background-color: white;
+    transition: background-image opacity 0.3s;
+}
+
+.elements__element-like:focus {
+    background-image: url("../../../images/element-like-active.svg");
+    opacity: 1;
+    transition: background-image opacity 0.3s;
+}

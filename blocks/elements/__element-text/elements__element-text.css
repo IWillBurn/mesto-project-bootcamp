@@ -1,0 +1,8 @@
+.elements__element-text {
+    display: grid;
+    max-width: 90%;
+    grid-template-columns: 1fr auto;
+    padding: 25px 0 31px 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+}

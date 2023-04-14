@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <link rel="stylesheet" href="./pages/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Место</title>
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <img class="header__logo" alt="Логотип" src="./images/header-logo.svg">
+        </header>
+        <main class="content">
+            <section class="profile">
+                <div class="profile__card">
+                    <img class="profile__avatar" alt="Аватар" src="./images/profile-avatar.png">
+                    <div class="profile__info">
+                        <div class="profile__info-main">
+                            <p class="profile__name">
+                                Жак-Ив Кусто
+                            </p>
+                            <button class="profile__edit-button button-opacity" />
+                        </div>
+                        <p class="profile__about-me">
+                            Исследователь океана
+                        </p>
+                    </div>
+                </div>
+                <button class="profile__add-button button-opacity" />
+            </section>
+            <section class="elements">
+                <div class="elements__element">
+                    <img class="elements__element-image" alt="Карачаевск" src="./images/elements-karachaevsk.png">
+                    <div class="elements__element-text">
+                        <h3 class="elements__element-title"> Карачаевск </h3>
+                        <button class="elements__element-like button-opacity" />
+                    </div>
+                </div>
+                <div class="elements__element">
+                    <img class="elements__element-image" alt="Карачаевск" src="./images/elements-elbrus.png">
+                    <div class="elements__element-text">
+                        <h3 class="elements__element-title"> Гора Эльбрус </h3>
+                        <button class="elements__element-like button-opacity" />
+                    </div>
+                </div>
+                <div class="elements__element">
+                    <img class="elements__element-image" alt="Карачаевск" src="./images/elements-dombay.png">
+                    <div class="elements__element-text">
+                        <h3 class="elements__element-title"> Домбай </h3>
+                        <button class="elements__element-like button-opacity" />
+                    </div>
+                </div>
+                <div class="elements__element">
+                    <img class="elements__element-image" alt="Карачаевск" src="./images/elements-elbrus.png">
+                    <div class="elements__element-text">
+                        <h3 class="elements__element-title"> Гора Эльбрус </h3>
+                        <button class="elements__element-like button-opacity" />
+                    </div>
+                </div>
+                <div class="elements__element">
+                    <img class="elements__element-image" alt="Карачаевск" src="./images/elements-dombay.png">
+                    <div class="elements__element-text">
+                        <h3 class="elements__element-title"> Домбай </h3>
+                        <button class="elements__element-like button-opacity" />
+                    </div>
+                </div>
+                <div class="elements__element">
+                    <img class="elements__element-image" alt="Карачаевск" src="./images/elements-karachaevsk.png">
+                    <div class="elements__element-text">
+                        <h3 class="elements__element-title"> Карачаево-Черкесия </h3>
+                        <button class="elements__element-like button-opacity" />
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__text">
+                © 2023 Mesto Russia
+            </p>
+        </footer>
+    </div>
+    <div class="overlay display-none"></div>
+    <div class="popup display-none">
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form class="popup__form">
+            <input class="popup__input input-animation" value="Жак-Ив Кусто">
+            <input class="popup__input input-animation" value="Исследователь океана">
+            <button class="popup__save-button button-opacity" type="submit">Сохранить</button>
+        </form>
+        <button class="popup__close-button button-opacity" />
+    </div>
+</body>
+</html>
