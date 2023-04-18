@@ -1,0 +1,11 @@
+.popup-profile__form {
+    display: flex;
+    flex-direction: column;
+    margin: 60px 0 0 0;
+}
+
+@media screen and (min-width: 500px) {
+    .popup-profile__form {
+        margin: 40px 0 0 0;
+    }
+}

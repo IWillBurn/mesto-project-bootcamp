@@ -17,61 +17,74 @@
                     <img class="profile__avatar" alt="Аватар" src="./images/profile-avatar.png">
                     <div class="profile__info">
                         <div class="profile__info-main">
-                            <h1 class="profile__name">
-                                Жак-Ив Кусто
-                            </h1>
-                            <button class="profile__edit-button button-opacity" type="button"></button>
+                            <h1 class="profile__name">Жак-Ив Кусто</h1>
+                            <button class="profile__edit-button" type="button"></button>
                         </div>
-                        <p class="profile__about-me">
-                            Исследователь океана
-                        </p>
+                        <p class="profile__about-me">Исследователь океана</p>
                     </div>
                 </div>
-                <button class="profile__add-button button-opacity" type="button"></button>
+                <button class="profile__add-button" type="button"></button>
             </section>
             <section class="elements">
-                <div class="elements__element">
-                    <img class="elements__element-image" alt="Карачаевск" src="./images/elements-karachaevsk.png">
-                    <div class="elements__element-text">
-                        <h2 class="elements__element-title"> Карачаевск </h2>
-                        <button class="elements__element-like button-opacity" type="button"></button>
+                <template id="card-template">
+                    <div class="elements__element">
+                        <img class="elements__element-image">
+                        <div class="elements__element-trash"></div>
+                        <div class="elements__element-text">
+                            <h2 class="elements__element-title"></h2>
+                            <button class="elements__element-like" type="button"></button>
+                        </div>
                     </div>
-                </div>
-                <div class="elements__element">
-                    <img class="elements__element-image" alt="Эльбрус" src="./images/elements-elbrus.png">
-                    <div class="elements__element-text">
-                        <h2 class="elements__element-title"> Гора Эльбрус </h2>
-                        <button class="elements__element-like button-opacity" type="button"></button>
-                    </div>
-                </div>
-                <div class="elements__element">
-                    <img class="elements__element-image" alt="Домбай" src="./images/elements-dombay.png">
-                    <div class="elements__element-text">
-                        <h2 class="elements__element-title"> Домбай </h2>
-                        <button class="elements__element-like button-opacity" type="button"></button>
-                    </div>
-                </div>
-                <div class="elements__element">
-                    <img class="elements__element-image" alt="Эльбрус" src="./images/elements-elbrus.png">
-                    <div class="elements__element-text">
-                        <h2 class="elements__element-title"> Гора Эльбрус </h2>
-                        <button class="elements__element-like button-opacity" type="button"></button>
-                    </div>
-                </div>
-                <div class="elements__element">
-                    <img class="elements__element-image" alt="Домбай" src="./images/elements-dombay.png">
-                    <div class="elements__element-text">
-                        <h2 class="elements__element-title"> Домбай </h2>
-                        <button class="elements__element-like button-opacity" type="button"></button>
-                    </div>
-                </div>
-                <div class="elements__element">
-                    <img class="elements__element-image" alt="Карачаево-Черкесия" src="./images/elements-karachaevsk.png">
-                    <div class="elements__element-text">
-                        <h2 class="elements__element-title"> Карачаево-Черкесия </h2>
-                        <button class="elements__element-like button-opacity" type="button"></button>
-                    </div>
-                </div>
+                </template>
+                <script>
+                    const initialCards = [
+                        {
+                            name: 'Архыз',
+                            link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+                        },
+                        {
+                            name: 'Челябинская область',
+                            link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+                        },
+                        {
+                            name: 'Иваново',
+                            link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+                        },
+                        {
+                            name: 'Камчатка',
+                            link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+                        },
+                        {
+                            name: 'Холмогорский район',
+                            link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+                        },
+                        {
+                            name: 'Байкал',
+                            link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+                        }
+                    ];
+                    const cardTemplate = document.querySelector('#card-template').content;
+                    const cards = document.querySelector('.elements');
+                    initialCards.forEach((card) => {
+                        const cardElement = cardTemplate.querySelector('.elements__element').cloneNode(true);
+                        cardElement.querySelector('.elements__element-image').src = card.link;
+                        cardElement.querySelector('.elements__element-image').alt = card.name;
+                        cardElement.querySelector('.elements__element-title').textContent = card.name;
+                        cards.append(cardElement);
+                        cardElement.querySelector('.elements__element-like').onclick = function () {
+                            if (cardElement.querySelector('.elements__element-like').classList.contains('elements__element-like_pressed')) {
+                                cardElement.querySelector('.elements__element-like').classList.remove('elements__element-like_pressed');
+                            }
+                            else {
+                                cardElement.querySelector('.elements__element-like').classList.add('elements__element-like_pressed');
+                            }
+                        };
+                        const deleteCard = () => {
+                            cardElement.remove();
+                        };
+                        cardElement.querySelector('.elements__element-trash').addEventListener("click", deleteCard)
+                    })
+                </script>
             </section>
         </main>
         <footer class="footer">
@@ -80,16 +93,76 @@
             </p>
         </footer>
     </div>
-    <div class="popup">
-        <div class="popup__container">
-            <h3 class="popup__title">Редактировать профиль</h3>
-            <form class="popup__form" name="form-profile-changer">
-                <input class="popup__input input-animation" type="text" name="input-name" value="Жак-Ив Кусто">
-                <input class="popup__input input-animation" type="text" name="input-about-me" value="Исследователь океана">
-                <button class="popup__save-button button-opacity" type="submit">Сохранить</button>
+    <div class="popup-profile">
+        <div class="popup-profile__container">
+            <h3 class="popup-profile__title">Редактировать профиль</h3>
+            <form class="popup-profile__form" name="form-profile-changer">
+                <input class="popup-profile__input input-animation" type="text" name="input-name" placeholder="Имя Фамилия">
+                <input class="popup-profile__input input-animation" type="text" name="input-about-me" placeholder="О себе">
+                <button class="popup-profile__save-button" type="submit">Сохранить</button>
             </form>
-            <button class="popup__close-button button-opacity" type="button"></button>
+            <button class="popup-profile__close-button" type="button"></button>
         </div>
     </div>
+    <script>
+        document.querySelector('.profile__edit-button').onclick = function () {
+            document.querySelector('.popup-profile').classList.add('popup-profile_opened');
+            document.querySelector('input[name=input-name]').value = document.querySelector('.profile__name').textContent.toString();
+            document.querySelector('input[name=input-about-me]').value = document.querySelector('.profile__about-me').textContent.toString();
+        }
+        document.querySelector('.popup-profile__close-button').onclick = function () {
+            document.querySelector('.popup-profile').classList.remove('popup-profile_opened');
+        }
+        function handleChangeProfileFormSubmit(event) {
+            event.preventDefault();
+            document.querySelector('.profile__name').textContent = document.querySelector('input[name=input-name]').value;
+            document.querySelector('.profile__about-me').textContent = document.querySelector('input[name=input-about-me]').value;
+            document.querySelector('.popup-profile').classList.remove('popup-profile_opened');
+        }
+        document.querySelector('.popup-profile__form').addEventListener('submit', handleChangeProfileFormSubmit);
+    </script>
+    <div class="popup-card">
+        <div class="popup-card__container">
+            <h3 class="popup-card__title">Новое место</h3>
+            <form class="popup-card__form" name="form-card-changer">
+                <input class="popup-card__input input-animation" type="text" name="input-card-name" placeholder="Название">
+                <input class="popup-card__input input-animation" type="text" name="input-image-link" placeholder="Ссылка на картинку">
+                <button class="popup-card__save-button" type="submit">Сохранить</button>
+            </form>
+            <button class="popup-card__close-button" type="button"></button>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.profile__add-button').onclick = function () {
+            document.querySelector('.popup-card').classList.add('popup-card_opened');
+        }
+        document.querySelector('.popup-card__close-button').onclick = function () {
+            document.querySelector('.popup-card').classList.remove('popup-card_opened');
+        }
+        function handleChangeProfileFormSubmit(event) {
+            const cardTemplate = document.querySelector('#card-template').content;
+            const cards = document.querySelector('.elements');
+            event.preventDefault();
+            const cardElement = cardTemplate.querySelector('.elements__element').cloneNode(true);
+            cardElement.querySelector('.elements__element-image').src = document.querySelector('input[name=input-image-link]').value;
+            cardElement.querySelector('.elements__element-image').alt = document.querySelector('input[name=input-card-name]').value;
+            cardElement.querySelector('.elements__element-title').textContent = document.querySelector('input[name=input-card-name]').value;
+            cards.append(cardElement);
+            cardElement.querySelector('.elements__element-like').onclick = function () {
+                if (cardElement.querySelector('.elements__element-like').classList.contains('elements__element-like_pressed')) {
+                    cardElement.querySelector('.elements__element-like').classList.remove('elements__element-like_pressed');
+                }
+                else {
+                    cardElement.querySelector('.elements__element-like').classList.add('elements__element-like_pressed');
+                }
+            };
+            const deleteCard = () => {
+                cardElement.remove();
+            };
+            cardElement.querySelector('.elements__element-trash').addEventListener("click", deleteCard)
+            document.querySelector('.popup-card').classList.remove('popup-card_opened');
+        }
+        document.querySelector('.popup-card__form').addEventListener('submit', handleChangeProfileFormSubmit);
+    </script>
 </body>
 </html>

@@ -1,7 +1,11 @@
-.elements__element-like {
-    width: 22px;
+.elements__element-trash {
+    width: 18px;
+    height: 19px;
     border: none;
-    background-image: url("../../../images/element-like.svg");
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-image: url("../../../images/element-trash.svg");
     background-position-x: 50%;
     background-position-y: 50%;
     background-repeat: no-repeat;
@@ -13,7 +17,7 @@
     cursor: pointer;
 }
 
-.elements__element-like:hover {
-    opacity: 0.5;
+.elements__element-trash:hover {
+    opacity: 0.6;
     transition: opacity 0.3s;
 }
