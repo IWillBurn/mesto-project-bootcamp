@@ -157,12 +157,18 @@
                 }
             };
             const deleteCard = () => {
-                cardElement.remove();
+                cardElement.remove()
             };
             cardElement.querySelector('.elements__element-trash').addEventListener("click", deleteCard)
             document.querySelector('.popup-card').classList.remove('popup-card_opened');
         }
         document.querySelector('.popup-card__form').addEventListener('submit', handleChangeProfileFormSubmit);
     </script>
+    <div class="popup-image popup-image_opened">
+        <div class="popup-image__container">
+            <img class="popup-image__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg">
+            <button class="popup-image__close-button" type="button"></button>
+        </div>
+    </div>
 </body>
 </html>
