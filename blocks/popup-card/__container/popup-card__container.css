@@ -1,21 +1,19 @@
 .popup-card__container {
     background-color: white;
     border-radius: 10px;
-    position: fixed;
-    top: calc(50% - 161px);
+    position: relative;
     min-height: 322px;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     width: 88%;
-    left: calc(50vw - (100vw * 0.44));
     padding: 25px 22px;
+    align-self: center;
 }
 
 @media screen and (min-width: 500px) {
     .popup-card__container {
         width: 430px;
-        left: calc(50% - 215px);
         padding: 34px 36px;
     }
 }

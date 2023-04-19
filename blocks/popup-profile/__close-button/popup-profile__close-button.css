@@ -1,7 +1,5 @@
 .popup-profile__close-button {
     position: absolute;
-    right: -8px;
-    top: -8px;
     background-image: url("../../../images/close-button.svg");
     background-repeat: no-repeat;
     background-size: 100%;

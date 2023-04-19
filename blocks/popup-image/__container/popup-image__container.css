@@ -1,10 +1,17 @@
 .popup-image__container {
     border-radius: 10px;
-    position: fixed;
+    position: relative;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    height: 100%;
-    width: 100%;
-    padding: 90px 40px 68px 40px;
+    max-height: calc(100vh - 130px);
+    max-width: calc(100vw - 80px);
+    align-self: center;
+}
+
+@media screen and (min-width: 500px) {
+    .popup-image__container {
+        max-height: calc(100vh - 130px);
+        max-width: calc(100vw - 160px);
+    }
 }
