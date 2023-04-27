@@ -1,5 +1,10 @@
+// Импорт js 
+import { validateWrappersInForm } from "./validate";
+import { addCard, createCard } from "./card";
+
 // Глобальные переменные
 const cardPopup = document.querySelector(".popup-card");
+const cardPopupForm = document.querySelector(".popup-card__form");
 const cardInputImageLink = document.querySelector("input[name=input-image-link]");
 const cardInputCardName = document.querySelector("input[name=input-card-name]");
 
@@ -10,7 +15,7 @@ const profilePopupInputAboutMe = document.querySelector("input[name=input-about-
 const profileAboutMe = document.querySelector(".profile__about-me");
 
 // Открытие popup-а
-const openPopup = (popup) => {
+export const openPopup = (popup) => {
     const form = popup.querySelector(".popup__form");
     popup.classList.remove("popup_status_closed");
     popup.classList.add("popup_status_opened");
@@ -21,7 +26,7 @@ const openPopup = (popup) => {
 }
 
 // Закрытие popup-а
-const closePopup = (popup) => {
+export const closePopup = (popup) => {
     popup.classList.remove("popup_status_opened");
     popup.classList.add("popup_status_closed");
     document.removeEventListener("keydown", closePopupByEscape);
@@ -36,19 +41,19 @@ const closePopupByEscape = (evt) => {
 }
 
 // Настройка popup-а редактирования профиля
-const openProfilePopup = () => {
+export const openProfilePopup = () => {
     profilePopupInputName.value = profileName.textContent;
     profilePopupInputAboutMe.value = profileAboutMe.textContent;
     openPopup(profilePopup);
 }
 
 // Отчистка формы создания карточек
-const clearCardInputs = () => {
+export const clearCardInputs = () => {
     cardPopupForm.reset();
 }
 
 // Обработка формы изменения профиля 
-function handleProfileFormSubmit(event) {
+export function handleProfileFormSubmit(event) {
     event.preventDefault();
     profileName.textContent = profilePopupInputName.value;
     profileAboutMe.textContent = profilePopupInputAboutMe.value;
@@ -56,7 +61,7 @@ function handleProfileFormSubmit(event) {
 }
 
 // Обработка формы создания карточки
-function handleCardFormSubmit(event) {
+export function handleCardFormSubmit(event) {
     event.preventDefault();
     addCard(createCard(cardInputCardName.value, cardInputImageLink.value));
     clearCardInputs();

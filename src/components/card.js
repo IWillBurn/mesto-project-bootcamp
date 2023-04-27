@@ -1,3 +1,6 @@
+// Импорт js 
+import { openPopup } from "./modal";
+
 // Глобальные переменные
 const cards = document.querySelector(".elements");
 const cardTemplate = document.querySelector("#card-template").content;
@@ -12,7 +15,7 @@ const deleteCard = (card) => {
 };
 
 // Добавление карточки
-const addCard = (card) => {
+export const addCard = (card) => {
     cards.prepend(card);
 }
 
@@ -40,7 +43,7 @@ const bindCardButtons = (cardElement) => {
 }
 
 // Создание карточки
-const createCard = (cardName, cardLink) => {
+export const createCard = (cardName, cardLink) => {
     const cardElement = cardTemplate.querySelector(".elements__element").cloneNode(true);
     const cardElementImage = cardElement.querySelector(".elements__element-image");
     cardElementImage.src = cardLink;

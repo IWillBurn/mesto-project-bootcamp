@@ -61,7 +61,7 @@ const isFormValid = (form) => {
 }
 
 // ѕроверка на валидность формы (при открытии popup)
-const validateWrappersInForm = (form) => {
+export const validateWrappersInForm = (form) => {
     const wrappers = form.querySelectorAll(".popup__input-wrapper")
     wrappers.forEach((wrapper) => {
         isInputValid(wrapper);
@@ -70,7 +70,7 @@ const validateWrappersInForm = (form) => {
 }
 
 // ”становка проверки на изменение валидации при вводе на все пол€
-const enableValidation = () => {
+export const enableValidation = () => {
     const forms = document.querySelectorAll(".popup__form")
     forms.forEach((form) => {
         const wrappers = form.querySelectorAll(".popup__input-wrapper");

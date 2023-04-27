@@ -1,4 +1,12 @@
-﻿// Массив начальных карточек
+﻿// Импорт css
+import './pages/index.css';
+
+// Импорт js 
+import { createCard, addCard } from "./components/card";
+import { openProfilePopup, handleProfileFormSubmit, handleCardFormSubmit, closePopup, openPopup } from "./components/modal";
+import { enableValidation } from "./components/validate";
+
+// Массив начальных карточек
 const initialCards = [
     {
         name: "Архыз",
@@ -29,6 +37,7 @@ const initialCards = [
 // Глобальные константы
 const popups = document.querySelectorAll(".popup");
 
+const cardPopup = document.querySelector(".popup-card");
 const cardPopupForm = document.querySelector(".popup-card__form");
 const cardAddButton = document.querySelector(".profile__add-button");
 
