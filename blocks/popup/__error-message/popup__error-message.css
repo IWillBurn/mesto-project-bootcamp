@@ -1,6 +1,6 @@
 .popup__error-message {
 	color: red;
-	min-height: 17px;
+	min-height: 40px;
 	padding: 5px 0 0 0;
 	font-family: 'Inter', 'Arial', sans-serif;
 	font-style: normal;
