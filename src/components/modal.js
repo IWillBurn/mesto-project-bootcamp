@@ -1,6 +1,7 @@
 // Импорт js 
-import { validateWrappersInForm } from "./validate";
+import { validateWrappersInForm, hideAllInputErrorInForm } from "./validate";
 import { addCard, createCard } from "./card";
+import { validationInfo } from "./validation-config";
 
 // Глобальные переменные
 const cardPopup = document.querySelector(".popup-card");
@@ -9,6 +10,7 @@ const cardInputImageLink = document.querySelector("input[name=input-image-link]"
 const cardInputCardName = document.querySelector("input[name=input-card-name]");
 
 const profilePopup = document.querySelector(".popup-profile");
+const profilePopupForm = document.querySelector(".popup-profile__form");
 const profilePopupInputName = document.querySelector("input[name=input-name]");
 const profileName = document.querySelector(".profile__name");
 const profilePopupInputAboutMe = document.querySelector("input[name=input-about-me]");
@@ -16,13 +18,9 @@ const profileAboutMe = document.querySelector(".profile__about-me");
 
 // Открытие popup-а
 export const openPopup = (popup) => {
-    const form = popup.querySelector(".popup__form");
     popup.classList.remove("popup_status_closed");
     popup.classList.add("popup_status_opened");
     document.addEventListener("keydown", closePopupByEscape);
-    if (form != null) {
-        validateWrappersInForm(form);
-    }
 }
 
 // Закрытие popup-а
@@ -34,8 +32,8 @@ export const closePopup = (popup) => {
 
 // Закрытие popup-а от нажатия escape
 const closePopupByEscape = (evt) => {
-    const openedPopup = document.querySelector(".popup_status_opened");
     if (evt.key === "Escape") {
+        const openedPopup = document.querySelector(".popup_status_opened");
         closePopup(openedPopup);
     }
 }
@@ -45,11 +43,20 @@ export const openProfilePopup = () => {
     profilePopupInputName.value = profileName.textContent;
     profilePopupInputAboutMe.value = profileAboutMe.textContent;
     openPopup(profilePopup);
+    validateWrappersInForm(profilePopupForm, validationInfo);
+}
+
+// Настройка popup-а создания карточки
+export const openCardPopup = () => {
+    openPopup(cardPopup);
+    clearFormInputs(cardPopupForm);
+    validateWrappersInForm(cardPopupForm, validationInfo);
+    hideAllInputErrorInForm(cardPopupForm, validationInfo);
 }
 
 // Отчистка формы создания карточек
-export const clearCardInputs = () => {
-    cardPopupForm.reset();
+export const clearFormInputs = (form) => {
+    form.reset();
 }
 
 // Обработка формы изменения профиля 
@@ -64,6 +71,6 @@ export function handleProfileFormSubmit(event) {
 export function handleCardFormSubmit(event) {
     event.preventDefault();
     addCard(createCard(cardInputCardName.value, cardInputImageLink.value));
-    clearCardInputs();
+    clearFormInputs(cardPopupForm)
     closePopup(cardPopup);
 }

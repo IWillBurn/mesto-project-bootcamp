@@ -1,82 +1,91 @@
 // Вывод ошибки валидации поля
-const showInputError = (input, element, errorMessage) => {
-    element.classList.remove('popup__error-message_visibility_hidden');
-    input.classList.add('popup__input_type_error');
+const showInputError = (input, element, errorMessage, validationInfo) => {
+    element.classList.remove(validationInfo.errorClass);
+    input.classList.add(validationInfo.inputTypeErrorClass);
     element.textContent = errorMessage
 };
 
 // Сокрытие ошибки валидации поля
-const hideInputError = (input, element) => {
-    element.classList.add('popup__error-message_visibility_hidden');
-    input.classList.remove('popup__input_type_error');
+const hideInputError = (input, element, validationInfo) => {
+    element.classList.add(validationInfo.errorClass);
+    input.classList.remove(validationInfo.inputTypeErrorClass);
     element.textContent = ""
 };
 
+export const hideAllInputErrorInForm = (form, validationInfo) => {
+    const wrappers = form.querySelectorAll(validationInfo.wrapperSelector);
+    wrappers.forEach((wrapper) => {
+        const input = wrapper.querySelector(validationInfo.inputSelector);
+        const errorMessage = wrapper.querySelector(validationInfo.errorMessageSelector);
+        hideInputError(input, errorMessage, validationInfo);
+    });
+}
+
 // Проверка валидности поля ввода (и вызов изменения поля)
-const isInputValid = (wrapper) => {
-    const input = wrapper.querySelector(".popup__input");
-    const inputErrorMessage = wrapper.querySelector(".popup__error-message");
+const isInputValid = (wrapper, validationInfo) => {
+    const input = wrapper.querySelector(validationInfo.inputSelector);
+    const inputErrorMessage = wrapper.querySelector(validationInfo.errorMessageSelector);
     if (!input.validity.valid) {
-        showInputError(input, inputErrorMessage, input.validationMessage);
+        showInputError(input, inputErrorMessage, input.validationMessage, validationInfo);
     } else {
-        hideInputError(input, inputErrorMessage);
+        hideInputError(input, inputErrorMessage, validationInfo);
     }
 };
 
 // Проверка на изменение валидации при вводе
-const isValid = (form, wrapper) => {
-    isInputValid(wrapper);
-    isFormValid(form);
+const isValid = (form, wrapper, validationInfo) => {
+    isInputValid(wrapper, validationInfo);
+    isFormValid(form, validationInfo);
 };
 
 // Установка кнопки в неактивное состояние
-const setSubmitButtonDisabled = (button) => {
-    button.classList.add('popup__submit-button_status_disabled');
+const setSubmitButtonDisabled = (button, validationInfo) => {
+    button.classList.add(validationInfo.inactiveButtonClass);
     button.setAttribute('disabled', true);
 }
 
 // Установка кнопки в активное состояние
-const setSubmitButtonEnabled = (button) => {
-    button.classList.remove('popup__submit-button_status_disabled');
+const setSubmitButtonEnabled = (button, validationInfo) => {
+    button.classList.remove(validationInfo.inactiveButtonClass);
     button.removeAttribute('disabled');
 }
 
 // Проверка является ли форма валидной (и вызов изменения кнопки) 
-const isFormValid = (form) => {
-    const wrappers = form.querySelectorAll(".popup__input-wrapper");
+const isFormValid = (form, validationInfo) => {
+    const wrappers = form.querySelectorAll(validationInfo.wrapperSelector);
     let formIsValid = true;
     wrappers.forEach((wrapper) => {
-        const input = wrapper.querySelector(".popup__input");
+        const input = wrapper.querySelector(validationInfo.inputSelector);
         if (!input.validity.valid) {
             formIsValid = false;
         }
     })
-    const submitButton = form.querySelector(".popup__submit-button");
+    const submitButton = form.querySelector(validationInfo.submitButtonSelector);
     if (formIsValid) {
-        setSubmitButtonEnabled(submitButton);
+        setSubmitButtonEnabled(submitButton, validationInfo);
     }
     else {
-        setSubmitButtonDisabled(submitButton);
+        setSubmitButtonDisabled(submitButton, validationInfo);
     }
 }
 
 // Проверка на валидность формы (при открытии popup)
-export const validateWrappersInForm = (form) => {
-    const wrappers = form.querySelectorAll(".popup__input-wrapper")
+export const validateWrappersInForm = (form, validationInfo) => {
+    const wrappers = form.querySelectorAll(validationInfo.wrapperSelector);
     wrappers.forEach((wrapper) => {
-        isInputValid(wrapper);
+        isInputValid(wrapper, validationInfo);
     })
-    isFormValid(form);
+    isFormValid(form, validationInfo);
 }
 
 // Установка проверки на изменение валидации при вводе на все поля
-export const enableValidation = () => {
-    const forms = document.querySelectorAll(".popup__form")
+export const enableValidation = (validationInfo) => {
+    const forms = document.querySelectorAll(validationInfo.formSelector);
     forms.forEach((form) => {
-        const wrappers = form.querySelectorAll(".popup__input-wrapper");
+        const wrappers = form.querySelectorAll(validationInfo.wrapperSelector);
         wrappers.forEach((wrapper) => {
-            const input = wrapper.querySelector(".popup__input");
-            input.addEventListener('input', () => isValid(form, wrapper));
+            const input = wrapper.querySelector(validationInfo.inputSelector);
+            input.addEventListener('input', () => isValid(form, wrapper, validationInfo));
         })
     })
 }

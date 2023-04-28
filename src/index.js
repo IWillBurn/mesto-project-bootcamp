@@ -3,8 +3,9 @@ import './pages/index.css';
 
 // Импорт js 
 import { createCard, addCard } from "./components/card";
-import { openProfilePopup, handleProfileFormSubmit, handleCardFormSubmit, closePopup, openPopup } from "./components/modal";
+import { openProfilePopup, openCardPopup, handleProfileFormSubmit, handleCardFormSubmit, closePopup } from "./components/modal";
 import { enableValidation } from "./components/validate";
+import { validationInfo } from "./components/validation-config";
 
 // Массив начальных карточек
 const initialCards = [
@@ -58,11 +59,6 @@ popups.forEach((popup) => {
             closePopup(popup);
         }
     });
-    popup.addEventListener("keypress", (evt) => {
-        if (evt.key === "Escape" && popup.classList.contains("popup_status_opened")) {
-            closePopup(popup);
-        }
-    });
 });
 
 // Подключение addEventListener на profileEditButton
@@ -72,10 +68,10 @@ profileEditButton.addEventListener("click", openProfilePopup);
 profilePopupForm.addEventListener("submit", handleProfileFormSubmit);
 
 // Настройка popup-а создания карточки
-cardAddButton.addEventListener("click", () => { openPopup(cardPopup); });
+cardAddButton.addEventListener("click", openCardPopup);
 
 // Подключение обработчика формы создания карточки
 cardPopupForm.addEventListener("submit", handleCardFormSubmit);
 
 // Включение валидации полей
-enableValidation();
+enableValidation(validationInfo);
