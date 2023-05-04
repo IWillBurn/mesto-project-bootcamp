@@ -1,5 +1,6 @@
 .elements__element-like {
     width: 22px;
+    aspect-ratio: 1 / 1;
     border: none;
     background-image: url("../../../images/element-like.svg");
     background-position-x: 50%;
@@ -11,6 +12,7 @@
     opacity: 1;
     transition: opacity 0.3s;
     cursor: pointer;
+    display: flex;
 }
 
 .elements__element-like:hover {
