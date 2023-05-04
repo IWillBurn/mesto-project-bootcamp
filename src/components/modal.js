@@ -1,9 +1,10 @@
-// »ÏÔÓÚ js 
+Ôªø// –ò–º–ø–æ—Ä—Ç js 
 import { validateWrappersInForm, hideAllInputErrorInForm } from "./validate";
 import { addCard, createCard } from "./card";
 import { validationInfo } from "./validation-config";
+import { patchMe, postCard, patchAvatar } from "./api";
 
-// √ÎÓ·‡Î¸Ì˚Â ÔÂÂÏÂÌÌ˚Â
+// –ì–ª–æ–±–∞–ª—å–Ω—ã–µ –ø–µ—Ä–µ–º–µ–Ω–Ω—ã–µ
 const cardPopup = document.querySelector(".popup-card");
 const cardPopupForm = document.querySelector(".popup-card__form");
 const cardInputImageLink = document.querySelector("input[name=input-image-link]");
@@ -16,21 +17,26 @@ const profileName = document.querySelector(".profile__name");
 const profilePopupInputAboutMe = document.querySelector("input[name=input-about-me]");
 const profileAboutMe = document.querySelector(".profile__about-me");
 
-// ŒÚÍ˚ÚËÂ popup-‡
+const avatarPopup = document.querySelector(".popup-avatar");
+const avatarPopupForm = document.querySelector(".popup-avatar__form");
+const avatarPopupInputLink = document.querySelector("input[name=input-avatar-link]");
+const profileAvatar = document.querySelector(".profile__avatar");
+
+// –û—Ç–∫—Ä—ã—Ç–∏–µ popup-–∞
 export const openPopup = (popup) => {
     popup.classList.remove("popup_status_closed");
     popup.classList.add("popup_status_opened");
     document.addEventListener("keydown", closePopupByEscape);
 }
 
-// «‡Í˚ÚËÂ popup-‡
+// –ó–∞–∫—Ä—ã—Ç–∏–µ popup-–∞
 export const closePopup = (popup) => {
     popup.classList.remove("popup_status_opened");
     popup.classList.add("popup_status_closed");
     document.removeEventListener("keydown", closePopupByEscape);
 };
 
-// «‡Í˚ÚËÂ popup-‡ ÓÚ Ì‡Ê‡ÚËˇ escape
+// –ó–∞–∫—Ä—ã—Ç–∏–µ popup-–∞ –æ—Ç –Ω–∞–∂–∞—Ç–∏—è escape
 const closePopupByEscape = (evt) => {
     if (evt.key === "Escape") {
         const openedPopup = document.querySelector(".popup_status_opened");
@@ -38,7 +44,7 @@ const closePopupByEscape = (evt) => {
     }
 }
 
-// Õ‡ÒÚÓÈÍ‡ popup-‡ Â‰‡ÍÚËÓ‚‡ÌËˇ ÔÓÙËÎˇ
+// –ù–∞—Å—Ç—Ä–æ–π–∫–∞ popup-–∞ —Ä–µ–¥–∞–∫—Ç–∏—Ä–æ–≤–∞–Ω–∏—è –ø—Ä–æ—Ñ–∏–ª—è
 export const openProfilePopup = () => {
     profilePopupInputName.value = profileName.textContent;
     profilePopupInputAboutMe.value = profileAboutMe.textContent;
@@ -46,7 +52,7 @@ export const openProfilePopup = () => {
     validateWrappersInForm(profilePopupForm, validationInfo);
 }
 
-// Õ‡ÒÚÓÈÍ‡ popup-‡ ÒÓÁ‰‡ÌËˇ Í‡ÚÓ˜ÍË
+// –ù–∞—Å—Ç—Ä–æ–π–∫–∞ popup-–∞ —Å–æ–∑–¥–∞–Ω–∏—è –∫–∞—Ä—Ç–æ—á–∫–∏
 export const openCardPopup = () => {
     openPopup(cardPopup);
     clearFormInputs(cardPopupForm);
@@ -54,23 +60,74 @@ export const openCardPopup = () => {
     hideAllInputErrorInForm(cardPopupForm, validationInfo);
 }
 
-// ŒÚ˜ËÒÚÍ‡ ÙÓÏ˚ ÒÓÁ‰‡ÌËˇ Í‡ÚÓ˜ÂÍ
+// –ù–∞—Å—Ç—Ä–æ–π–∫–∞ popup-–∞ –∏–∑–º–µ–Ω–µ–Ω–µ–∏—è –∞–≤–∞—Ç–∞—Ä–∞
+export const openAvatarPopup = () => {
+    openPopup(avatarPopup);
+    clearFormInputs(avatarPopupForm);
+    validateWrappersInForm(avatarPopupForm, validationInfo);
+    hideAllInputErrorInForm(avatarPopupForm, validationInfo);
+}
+
+// –û—Ç—á–∏—Å—Ç–∫–∞ —Ñ–æ—Ä–º—ã —Å–æ–∑–¥–∞–Ω–∏—è –∫–∞—Ä—Ç–æ—á–µ–∫
 export const clearFormInputs = (form) => {
     form.reset();
 }
 
-// Œ·‡·ÓÚÍ‡ ÙÓÏ˚ ËÁÏÂÌÂÌËˇ ÔÓÙËÎˇ 
+// –£—Å—Ç–∞–Ω–æ–≤–∫–∞ "–°–æ—Ö—Ä–∞–Ω–µ–Ω–∏–µ..." –Ω–∞ –∫–Ω–æ–ø–∫—É
+const setSaving = (popup) => {
+    const submitButton = popup.querySelector(".popup__submit-button");
+    submitButton.textContent = "–°–æ—Ö—Ä–∞–Ω–µ–Ω–∏–µ...";
+}
+
+// –£—Å—Ç–∞–Ω–æ–≤–∫–∞ "–°–æ—Ö—Ä–∞–Ω–∏—Ç—å" –Ω–∞ –∫–Ω–æ–ø–∫—É
+const setSave = (popup) => {
+    const submitButton = popup.querySelector(".popup__submit-button");
+    submitButton.textContent = "–°–æ—Ö—Ä–∞–Ω–∏—Ç—å";
+}
+
+// –û–±—Ä–∞–±–æ—Ç–∫–∞ —Ñ–æ—Ä–º—ã –∏–∑–º–µ–Ω–µ–Ω–∏—è –ø—Ä–æ—Ñ–∏–ª—è 
 export function handleProfileFormSubmit(event) {
     event.preventDefault();
-    profileName.textContent = profilePopupInputName.value;
-    profileAboutMe.textContent = profilePopupInputAboutMe.value;
+    setSaving(profilePopup);
+    patchMe({ name: profilePopupInputName.value, about: profilePopupInputAboutMe.value }).then(async (result) => {
+        setProfileData(result.name, result.about);
+        setSave(profilePopup);
+    })
     closePopup(profilePopup);
 }
 
-// Œ·‡·ÓÚÍ‡ ÙÓÏ˚ ÒÓÁ‰‡ÌËˇ Í‡ÚÓ˜ÍË
+// –£—Å—Ç–∞–Ω–æ–≤–∏—Ç—å –¥–∞–Ω–Ω—ã–µ –ø—Ä–æ—Ñ–∏–ª—è
+export function setProfileData(name, aboutMe) {
+    profileName.textContent = name;
+    profileAboutMe.textContent = aboutMe;
+}
+
+// –û–±—Ä–∞–±–æ—Ç–∫–∞ —Ñ–æ—Ä–º—ã —Å–æ–∑–¥–∞–Ω–∏—è –∫–∞—Ä—Ç–æ—á–∫–∏
 export function handleCardFormSubmit(event) {
     event.preventDefault();
-    addCard(createCard(cardInputCardName.value, cardInputImageLink.value));
+    setSaving(cardPopup);
+    postCard({ name: cardInputCardName.value, link: cardInputImageLink.value }).then(async (result) => {
+        addCard(createCard(result.name, result.link, result.likes.length, result._id, false, true));
+        setSave(cardPopup);
+    })
     clearFormInputs(cardPopupForm)
     closePopup(cardPopup);
 }
+
+// –û–±—Ä–∞–±–æ—Ç–∫–∞ —Ñ–æ—Ä–º—ã –∏–∑–º–µ–Ω–µ–Ω–∏—è –∞–≤–∞—Ç–∞—Ä–∞
+export function handleAvatarFormSubmit(event) {
+    event.preventDefault();
+    setSaving(avatarPopup);
+    patchAvatar({ avatar: avatarPopupInputLink.value }).then(async (result) => {
+        setAvatarImage(result.avatar);
+        setSave(avatarPopup);
+    })
+    clearFormInputs(avatarPopupForm);
+    closePopup(avatarPopup);
+}
+
+// –£—Å—Ç–∞–Ω–æ–≤–∏—Ç—å –¥–∞–Ω–Ω—ã–µ –ø—Ä–æ—Ñ–∏–ª—è
+export function setAvatarImage(avatarLink) {
+    profileAvatar.src = avatarLink;
+}
+

@@ -19,17 +19,17 @@
                     </div>
                     <div class="profile__info">
                         <div class="profile__info-main">
-                            <h1 class="profile__name">Жак-Ив Кусто</h1>
+                            <h1 class="profile__name"></h1>
                             <button class="profile__edit-button" type="button"></button>
                         </div>
-                        <p class="profile__about-me">Исследователь океана</p>
+                        <p class="profile__about-me"></p>
                     </div>
                 </div>
                 <button class="profile__add-button" type="button"></button>
             </section>
             <section class="elements">
                 <template id="card-template">
-                    <div class="elements__element">
+                    <div class="elements__element" data-id="">
                         <img class="elements__element-image">
                         <div class="elements__element-trash"></div>
                         <div class="elements__element-text">
@@ -95,7 +95,7 @@
             <h3 class="popup__title popup-avatar__title">Обновить аватар</h3>
             <form class="popup__form popup-avatar__form" name="form-avatar-changer" novalidate>
                 <div class="popup__input-wrapper" id="input-avatar-link-wrapper">
-                    <input class="popup__input popup-avatar__input input-animation" type="url" name="input-avatar-link" placeholder="Ссылка">
+                    <input class="popup__input popup-avatar__input input-animation" type="url" name="input-avatar-link" placeholder="Ссылка" required>
                     <span class="popup__error-message"></span>
                 </div>
                 <button class="popup__submit-button popup-avatar__save-button" type="submit">Сохранить</button>

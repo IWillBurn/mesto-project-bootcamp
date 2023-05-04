@@ -1,5 +1,6 @@
 // Импорт js 
 import { openPopup } from "./modal";
+import { deleteCard, putLike, deleteLike } from "./api";
 
 // Глобальные переменные
 const cards = document.querySelector(".elements");
@@ -10,8 +11,10 @@ const imagePopupImage = document.querySelector(".popup-image__image");
 const imagePopupSubtitle = document.querySelector(".popup-image__subtitle");
 
 // Удаление карточки
-const deleteCard = (card) => {
-    card.remove();
+const removeCard = (card) => {
+    deleteCard(card.dataset.id).then(async (result) => {
+        card.remove()
+    })
 };
 
 // Добавление карточки
@@ -19,18 +22,42 @@ export const addCard = (card) => {
     cards.prepend(card);
 }
 
-// Обновление статуса лайка
-const updateLikeStatus = (likeButton) => {
+// Переключение статуса лайка
+const toggleLikeStatus = (likeButton) => {
     likeButton.classList.toggle("elements__element-like_pressed");
 }
 
+// Переключение статуса корзины
+const toggleTrashStatus = (trashButton) => {
+    trashButton.classList.toggle("elements__element-trash_visibility_hidden");
+}
+
+// Обновление статуса лайка
+const updateLikeStatus = (likeButton, cardId, likeCounter) => {
+    if (likeButton.classList.contains("elements__element-like_pressed")) {
+        deleteLike(cardId).then(async (result) => {
+            updateLikeCounter(likeCounter, result.likes.length);
+        })
+    }
+    else {
+        putLike(cardId).then(async (result) => {
+            updateLikeCounter(likeCounter, result.likes.length);
+        })
+    }
+    toggleLikeStatus(likeButton)
+}
+
+// Обновление количества лайков
+const updateLikeCounter = (likeCounter, count) => {
+    likeCounter.textContent = count;
+}
+
 // Бинд кнопок для карточки
-const bindCardButtons = (cardElement) => {
-    const likeButton = cardElement.querySelector(".elements__element-like");
-    likeButton.addEventListener("click", () => updateLikeStatus(likeButton));
+const bindCardButtons = (likeButton, cardElement, likeCounter) => {
+    likeButton.addEventListener("click", () => updateLikeStatus(likeButton, cardElement.dataset.id, likeCounter));
 
     const trash = cardElement.querySelector(".elements__element-trash");
-    trash.addEventListener("click", () => deleteCard(cardElement));
+    trash.addEventListener("click", () => removeCard(cardElement));
 
     const image = cardElement.querySelector(".elements__element-image");
     const title = cardElement.querySelector(".elements__element-title");
@@ -43,13 +70,28 @@ const bindCardButtons = (cardElement) => {
 }
 
 // Создание карточки
-export const createCard = (cardName, cardLink) => {
+export const createCard = (cardName, cardLink, cardCountOfLikes, cardId, likeStatus, isOwner) => {
     const cardElement = cardTemplate.querySelector(".elements__element").cloneNode(true);
     const cardElementImage = cardElement.querySelector(".elements__element-image");
+    const cardElementTitle = cardElement.querySelector(".elements__element-title");
+    const cardLikeCounter = cardElement.querySelector(".elements__element-like-counter");
+    const likeButton = cardElement.querySelector(".elements__element-like");
+    const trashButton = cardElement.querySelector(".elements__element-trash");
+
+    cardElement.dataset.id = cardId;
     cardElementImage.src = cardLink;
     cardElementImage.alt = cardName;
-    const cardElementTitle = cardElement.querySelector(".elements__element-title");
     cardElementTitle.textContent = cardName;
-    bindCardButtons(cardElement);
+    bindCardButtons(likeButton, cardElement, cardLikeCounter);
+    updateLikeCounter(cardLikeCounter, cardCountOfLikes);
+
+    if (likeStatus) {
+        toggleLikeStatus(likeButton);
+    }
+
+    if (!isOwner) {
+        toggleTrashStatus(trashButton);
+    }
+
     return cardElement;
 }
