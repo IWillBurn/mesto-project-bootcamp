@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Место</title>
+<script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
+<body>
+    <div class="page">
+        <header class="header">
+            <img class="header__logo" alt="Логотип" src="03b78ada3425e9132ff3.svg">
+        </header>
+        <main class="content">
+            <section class="profile">
+                <div class="profile__card">
+                    <div class="profile__avatar-wrapper">
+                        <button class="profile__change-avatar"></button>
+                        <img class="profile__avatar" alt="Аватар" src="562483fd2e6aca3c0370.png">
+                    </div>
+                    <div class="profile__info">
+                        <div class="profile__info-main">
+                            <h1 class="profile__name"></h1>
+                            <button class="profile__edit-button" type="button"></button>
+                        </div>
+                        <p class="profile__about-me"></p>
+                    </div>
+                </div>
+                <button class="profile__add-button" type="button"></button>
+            </section>
+            <section class="elements">
+                <template id="card-template">
+                    <div class="elements__element" data-id="">
+                        <img class="elements__element-image">
+                        <div class="elements__element-trash"></div>
+                        <div class="elements__element-text">
+                            <h2 class="elements__element-title"></h2>
+                            <div class="elements__element-like-wrapper">
+                                <button class="elements__element-like" type="button"></button>
+                                <p class="elements__element-like-counter">0</p>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__text">
+                © 2023 Mesto Russia
+            </p>
+        </footer>
+    </div>
+    <div class="popup popup-image">
+        <div class="popup-image__container">
+            <img class="popup-image__image">
+            <button class="popup__close-button" type="button"></button>
+            <p class="popup-image__subtitle">Горный Алтай</p>
+        </div>
+    </div>
+    <div class="popup popup-profile">
+        <div class="popup-profile__container">
+            <h3 class="popup__title popup-profile__title">Редактировать профиль</h3>
+            <form class="popup__form popup-profile__form" name="form-profile-changer" novalidate>
+                <div class="popup__input-wrapper" id="input-name-wrapper">
+                    <input class="popup-card__input popup__input input-animation" type="text" name="input-name" placeholder="Имя Фамилия" required minlength="2" maxlength="40">
+                    <span class="popup__error-message"></span>
+                </div>
+                <div class="popup__input-wrapper" id="input-about-me-wrapper">
+                    <input class="popup-card__input popup__input input-animation" type="text" name="input-about-me" placeholder="О себе" required minlength="2" maxlength="200">
+                    <span class="popup__error-message"></span>
+                </div>
+                <button class="popup__submit-button popup-profile__save-button" type="submit">Сохранить</button>
+            </form>
+            <button class="popup__close-button" type="button"></button>
+        </div>
+    </div>
+    <div class="popup popup-card">
+        <div class="popup-card__container">
+            <h3 class="popup__title popup-card__title">Новое место</h3>
+            <form class="popup__form popup-card__form" name="form-card-changer" novalidate>
+                <div class="popup__input-wrapper" id="input-card-name-wrapper">
+                    <input class="popup-card__input popup__input input-animation" type="text" name="input-card-name" placeholder="Название" required minlength="2" maxlength="30">
+                    <span class="popup__error-message"></span>
+                </div>
+                <div class="popup__input-wrapper" id="input-image-link-wrapper">
+                    <input class="popup-card__input popup__input input-animation" type="url" name="input-image-link" placeholder="Ссылка на картинку" required>
+                    <span class="popup__error-message"></span>
+                </div>
+                <button class="popup__submit-button popup-card__save-button" type="submit">Сохранить</button>
+            </form>
+            <button class="popup__close-button" type="button"></button>
+        </div>
+    </div>
+    <div class="popup popup-avatar">
+        <div class="popup-avatar__container">
+            <h3 class="popup__title popup-avatar__title">Обновить аватар</h3>
+            <form class="popup__form popup-avatar__form" name="form-avatar-changer" novalidate>
+                <div class="popup__input-wrapper" id="input-avatar-link-wrapper">
+                    <input class="popup__input popup-avatar__input input-animation" type="url" name="input-avatar-link" placeholder="Ссылка" required>
+                    <span class="popup__error-message"></span>
+                </div>
+                <button class="popup__submit-button popup-avatar__save-button" type="submit">Сохранить</button>
+            </form>
+            <button class="popup__close-button" type="button"></button>
+        </div>
+    </div>
+</body>
+</html>

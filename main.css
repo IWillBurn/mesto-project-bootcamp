@@ -1,0 +1,1354 @@
+/*!**************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/vendor/normalize.css ***!
+  \**************************************************************************************************************************************************/
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+ html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+
+/*!****************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/vendor/inter/inter.css ***!
+  \****************************************************************************************************************************************************/
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(c8ba52b05a9ef10f4758.woff2?v=3.19) format("woff2"), url(8c206db99195777c6769.woff?v=3.19) format("woff");
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(293fd13dbca5a3e450ef.woff2?v=3.19) format("woff2"), url(9053572c46aeb4b16caa.woff?v=3.19) format("woff");
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url(15ca31c0a2a68f76d2d1.woff2?v=3.19) format("woff2"), url(c6938660eec019fefd68.woff?v=3.19) format("woff");
+}
+/*!*********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/fonts/fonts.css ***!
+  \*********************************************************************************************************************************************/
+
+/*!**************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/page/page.css ***!
+  \**************************************************************************************************************************************************/
+.page {
+    display: flex;
+    width: 100%;
+    background-color: black;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 320px;
+    padding: 28px 0 0 0;
+}
+
+@media screen and (min-width: 768px) {
+    .page {
+        padding: 45px 0 0 0;
+    }
+}
+/*!******************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/header/header.css ***!
+  \******************************************************************************************************************************************************/
+.header {
+    max-width: 880px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(54, 54, 54, 0.7);
+    padding: 0 0 0 28px;
+}
+
+@media screen and (min-width: 908px) {
+    .header {
+        padding: 0;
+    }
+}
+/*!*******************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/header/__logo/header__logo.css ***!
+  \*******************************************************************************************************************************************************************/
+.header__logo {
+    display: flex;
+    width: 104px;
+    margin: 0 0 30px 0;
+}
+
+@media screen and (min-width: 768px) {
+    .header__logo {
+        width: 142px;
+        margin: 0 0 40px 0;
+    }
+}
+/*!********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/content/content.css ***!
+  \********************************************************************************************************************************************************/
+.content {
+    max-width: 880px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/*!********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/profile/profile.css ***!
+  \********************************************************************************************************************************************************/
+.profile {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    flex-direction: column;
+    padding: 40px 19px 0 19px;
+}
+
+@media screen and (min-width: 768px) {
+    .profile {
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 908px) {
+    .profile {
+        padding: 40px 0 0 0;
+    }
+}
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/profile/__about-me/profile__about-me.css ***!
+  \*****************************************************************************************************************************************************************************/
+.profile__about-me {
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    justify-content: space-around;
+    font-size: 14px;
+    line-height: 17px;
+    align-self: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 282px;
+}
+
+@media screen and (min-width: 768px) {
+    .profile__about-me {
+        justify-content: flex-start;
+        font-size: 18px;
+        line-height: 22px;
+        align-self: flex-start;
+        max-width: 336px;
+    }
+}
+/*!*********************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/profile/__card/profile__card.css ***!
+  \*********************************************************************************************************************************************************************/
+.profile__card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 26px;
+}
+
+@media screen and (min-width: 768px) {
+    .profile__card {
+        flex-direction: row;
+        column-gap: 26px;
+    }
+}
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/profile/__info-main/profile__info-main.css ***!
+  \*******************************************************************************************************************************************************************************/
+.profile__info-main {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    align-items: end;
+}
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/profile/__add-button/profile__add-button.css ***!
+  \*********************************************************************************************************************************************************************************/
+.profile__add-button {
+    display: flex;
+    background-image: url(d86bb2edc2f6eadb96b7.svg);
+    background-color: rgba(0,0,0,0);
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: 22px;
+    border: 2px solid white;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    border-radius: 2px;
+    align-self: center;
+    opacity: 1;
+    transition: opacity 0.3s;
+    cursor: pointer;
+    width: 100%;
+    margin: 36px 0 0 0;
+}
+
+.profile__add-button:hover {
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+@media screen and (min-width: 768px) {
+    .profile__add-button {
+        width: 150px;
+        margin: 0;
+    }
+}
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/profile/__avatar-wrapper/profile__avatar-wrapper.css ***!
+  \*****************************************************************************************************************************************************************************************/
+.profile__avatar-wrapper {
+    position: relative;
+    border-radius: 50%;
+}
+
+/*!*************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/profile/__avatar/profile__avatar.css ***!
+  \*************************************************************************************************************************************************************************/
+.profile__avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/profile/__change-avatar/profile__change-avatar.css ***!
+  \***************************************************************************************************************************************************************************************/
+.profile__change-avatar {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url(8667ac4a523e8fc42e59.svg);
+    background-repeat: no-repeat;
+    border: none;
+    background-position: center;
+    opacity: 0;
+    background-size: 26px;
+    border-radius: 45%;
+    transition: opacity 0.3s, background-color 0.3s;
+    cursor: pointer;
+}
+
+.profile__change-avatar:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: opacity 0.3s, background-color 0.3s;
+}
+
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/profile/__edit-button/profile__edit-button.css ***!
+  \***********************************************************************************************************************************************************************************/
+.profile__edit-button {
+    background-image: url(8667ac4a523e8fc42e59.svg);
+    background-color: rgba(0,0,0,0);
+    background-repeat: no-repeat;
+    border: none;
+    align-self: center;
+    border: 1px solid white;
+    background-position: center;
+    opacity: 1;
+    transition: opacity 0.3s;
+    cursor: pointer;
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    right: 0;
+    bottom: 7px;
+    transform: translate(calc(100% + 18px));
+    background-size: 7.5px;
+}
+
+.profile__edit-button:hover {
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+@media screen and (min-width: 768px) {
+    .profile__edit-button {
+        height: 24px;
+        width: 24px;
+        position: relative;
+        bottom: 0px;
+        transform: translate(0);
+        background-size: 10px;
+    }
+}
+/*!*********************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/profile/__info/profile__info.css ***!
+  \*********************************************************************************************************************************************************************/
+.profile__info{
+    display: flex;
+    justify-content: space-around;
+    margin: auto 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+/*!*********************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/profile/__name/profile__name.css ***!
+  \*********************************************************************************************************************************************************************/
+.profile__name {
+    display: block;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 33px;
+    color: white;
+    margin: 0;
+    padding: 0;
+    max-width: 189px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+    .profile__name {
+        font-size: 42px;
+        line-height: 48px;
+        max-width: 336px;
+    }
+}
+/*!**********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/elements/elements.css ***!
+  \**********************************************************************************************************************************************************/
+.elements {
+    position: relative;
+    display: grid;
+    grid-row-gap: 20px;
+    grid-column-gap: 16px;
+    align-self: center;
+    box-sizing: border-box;
+    grid-template-columns: 1fr;
+    padding: 36px 19px 0 19px;
+    border: none;
+    max-width: 320px;
+}
+
+@media screen and (min-width: 618px) {
+    .elements {
+        grid-template-columns: 1fr 1fr;
+        max-width: 618px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .elements {
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 50px 0 0 0;
+        max-width: 878px;
+    }
+}
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/elements/__element/elements__element.css ***!
+  \*****************************************************************************************************************************************************************************/
+.elements__element {
+    position: relative;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/elements/__element-image/elements__element-image.css ***!
+  \*****************************************************************************************************************************************************************************************/
+.elements__element-image {
+    width: 282px;
+    height: 282px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+}
+
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/elements/__element-like/elements__element-like.css ***!
+  \***************************************************************************************************************************************************************************************/
+.elements__element-like {
+    width: 22px;
+    aspect-ratio: 1 / 1;
+    border: none;
+    background-image: url(87ed371465c7a6a1cd01.svg);
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+    background-size: 22px 19px;
+    background-color: rgba(0,0,0,0);
+    transition: background-image opacity 0.3s;
+    opacity: 1;
+    transition: opacity 0.3s;
+    cursor: pointer;
+    display: flex;
+}
+
+.elements__element-like:hover {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/elements/__element-like/_pressed/elements__element-like_pressed.css ***!
+  \********************************************************************************************************************************************************************************************************/
+.elements__element-like_pressed {
+	background-image: url(fe17a515669479b1e649.svg);
+}
+
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/elements/__element-like-wrapper/elements__element-like-wrapper.css ***!
+  \*******************************************************************************************************************************************************************************************************/
+.elements__element-like-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+}
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/elements/__element-like-counter/elements__element-like-counter.css ***!
+  \*******************************************************************************************************************************************************************************************************/
+.elements__element-like-counter {
+    margin: 0;
+    display: flex;
+    text-align: center;
+    align-self: center;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/elements/__element-text/elements__element-text.css ***!
+  \***************************************************************************************************************************************************************************************/
+.elements__element-text {
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: 1fr auto;
+    padding: 25px 15px 31px 21px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/elements/__element-title/elements__element-title.css ***!
+  \*****************************************************************************************************************************************************************************************/
+.elements__element-title {
+	width: 90%;
+	font-family: 'Inter', 'Arial', sans-serif;
+	font-style: normal;
+	font-weight: 900;
+	font-size: 24px;
+	line-height: 29px;
+	color: black;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	margin: 0;
+	align-self: center;
+}
+
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/elements/__element-trash/elements__element-trash.css ***!
+  \*****************************************************************************************************************************************************************************************/
+.elements__element-trash {
+    width: 18px;
+    height: 19px;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-image: url(ce3b64935accf9b8212e.svg);
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+    background-size: 22px 19px;
+    background-color: rgba(0,0,0,0);
+    transition: background-image opacity 0.3s;
+    opacity: 1;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.elements__element-trash:hover {
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/elements/__element-trash/_visibility/elements__element-trash_visibility_hidden.css ***!
+  \***********************************************************************************************************************************************************************************************************************/
+.elements__element-trash_visibility_hidden {
+	visibility: hidden;
+}
+
+/*!******************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/footer/footer.css ***!
+  \******************************************************************************************************************************************************/
+.footer {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 880px;
+    padding: 48px 19px 36px 19px;
+}
+
+@media screen and (min-width: 878px) {
+    .footer {
+        padding: 66px 0 60px 0;
+    }
+}
+/*!*******************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/footer/__text/footer__text.css ***!
+  \*******************************************************************************************************************************************************************/
+.footer__text {
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #545454;
+    display: flex;
+    margin: 0;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+@media screen and (min-width: 768px) {
+    .footer__text {
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+/*!****************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/popup.css ***!
+  \****************************************************************************************************************************************************/
+.popup {
+    height: 100%;
+    width: 100%;
+    min-width: 320px;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+}
+/*!**************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/_status/popup_status_opened.css ***!
+  \**************************************************************************************************************************************************************************/
+.popup_status_opened {
+    animation: fade-in linear 0.3s forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+/*!*******************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/__title/popup__title.css ***!
+  \*******************************************************************************************************************************************************************/
+.popup__title {
+	display: flex;
+	margin: 0;
+	font-family: 'Inter', 'Arial', sans-serif;
+	font-style: normal;
+	text-align: center;
+	font-weight: 900;
+	font-size: 18px;
+	line-height: 22px;
+	align-self: center;
+}
+
+@media screen and (min-width: 500px) {
+	.popup__title {
+		font-size: 24px;
+		line-height: 29px;
+		align-self: auto;
+	}
+}
+
+/*!**************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/_status/popup_status_closed.css ***!
+  \**************************************************************************************************************************************************************************/
+.popup_status_closed {
+	animation: fade-out linear 0.3s forwards;
+}
+
+@keyframes fade-out {
+	0% {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	100% {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+/*************************** 
+****************************
+	���� ������ ��������� ����� �� popup_status_closed
+	� popup, �� �������� �������� ����� �������������
+	��� ������ �� ��������, ��� ������ ��������.
+	����� �������, � ����� ������������ popup_status_closed,
+	������� �� ��������� �� ����� ������������� popup.
+	� �� ����� ������� ��� ��������� ��������� ������������
+	��� animation.
+	�������� ��� ������ ���������� ����� ������� �����
+	���� �� ��������.
+**************************** 
+***************************/
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/__close-button/popup__close-button.css ***!
+  \*********************************************************************************************************************************************************************************/
+.popup__close-button {
+    position: absolute;
+    background-image: url(2ceb783afbab75916ddc.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border: none;
+    align-self: center;
+    background-color: rgba(0,0,0,0);
+    opacity: 1;
+    transition: opacity 0.3s;
+    cursor: pointer;
+    right: 0;
+    top: -36px;
+    height: 20px;
+    width: 20px;
+}
+
+.popup-popup__close-button:hover {
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+@media screen and (min-width: 500px) {
+    .popup__close-button {
+        right: -40px;
+        top: -40px;
+        height: 32px;
+        width: 32px;
+    }
+}
+
+/*!*******************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/__input/popup__input.css ***!
+  \*******************************************************************************************************************************************************************/
+.popup__input {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+/*!************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/__input/_type/popup__input_type_error.css ***!
+  \************************************************************************************************************************************************************************************/
+.popup__input_type_error {
+    border-bottom: 1px solid #FF0000;
+}
+
+/*!*****************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/__form/popup__form.css ***!
+  \*****************************************************************************************************************************************************************/
+.popup__form {
+    display: flex;
+    flex-direction: column;
+    margin: 60px 0 0 0;
+}
+
+@media screen and (min-width: 500px) {
+    .popup__form {
+        margin: 54px 0 0 0;
+    }
+}
+
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/__submit-button/popup__submit-button.css ***!
+  \***********************************************************************************************************************************************************************************/
+.popup__submit-button {
+    display: flex;
+    margin: 18px 0 0 0;
+    height: 46px;
+    width: 100%;
+    border: none;
+    background-color: black;
+    color: white;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    border-radius: 2px;
+    opacity: 1;
+    transition: opacity 0.3s;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.popup__submit-button:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+@media screen and (min-width: 500px) {
+    .popup__submit-button {
+        font-size: 18px;
+        line-height: 22px;
+        height: 50px;
+    }
+}
+
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/__submit-button/_status/popup__submit-button_status_disabled.css ***!
+  \***********************************************************************************************************************************************************************************************************/
+.popup__submit-button_status_disabled {
+    border: 1px solid #000000;
+    border-radius: 2px;
+    opacity: 0.2;
+    color: black;
+    background-color: white;
+    pointer-events: none;
+}
+
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/__input-wrapper/popup__input-wrapper.css ***!
+  \***********************************************************************************************************************************************************************************/
+.popup__input-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/__error-message/popup__error-message.css ***!
+  \***********************************************************************************************************************************************************************************/
+.popup__error-message {
+	color: red;
+	min-height: 40px;
+	padding: 5px 0 0 0;
+	font-family: 'Inter', 'Arial', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 15px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/__error-message/_visibility/popup__error-message_visibility_hidden.css ***!
+  \*****************************************************************************************************************************************************************************************************************/
+.popup__error-message_visibility_hidden {
+    visibility: hidden;
+}
+/*!********************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-profile/popup-profile.css ***!
+  \********************************************************************************************************************************************************************/
+.popup-profile {
+	
+}
+
+/*!*******************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-profile/__container/popup-profile__container.css ***!
+  \*******************************************************************************************************************************************************************************************/
+.popup-profile__container {
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 88%;
+    padding: 25px 22px;
+    align-self: center;
+}
+
+@media screen and (min-width: 500px) {
+    .popup-profile__container {
+        width: 430px;
+        padding: 34px 36px;
+    }
+}
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-profile/__form/popup-profile__form.css ***!
+  \*********************************************************************************************************************************************************************************/
+.popup-profile__form {
+
+}
+
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-profile/__input/popup-profile__input.css ***!
+  \***********************************************************************************************************************************************************************************/
+.popup-profile__input {
+    
+}
+
+/*!***********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-profile/__save-button/popup-profile__save-button.css ***!
+  \***********************************************************************************************************************************************************************************************/
+.popup-profile__save-button {
+}
+
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-profile/__title/popup-profile__title.css ***!
+  \***********************************************************************************************************************************************************************************/
+.popup-profile__title {
+}
+
+/*!**************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-card/popup-card.css ***!
+  \**************************************************************************************************************************************************************/
+.popup-card {
+	
+}
+
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-card/__container/popup-card__container.css ***!
+  \*************************************************************************************************************************************************************************************/
+.popup-card__container {
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    min-height: 322px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 88%;
+    padding: 25px 22px;
+    align-self: center;
+}
+
+@media screen and (min-width: 500px) {
+    .popup-card__container {
+        width: 430px;
+        padding: 34px 36px;
+    }
+}
+
+/*!***************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-card/__form/popup-card__form.css ***!
+  \***************************************************************************************************************************************************************************/
+.popup-card__form {
+}
+
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-card/__input/popup-card__input.css ***!
+  \*****************************************************************************************************************************************************************************/
+.popup-card__input {
+}
+
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-card/__save-button/popup-card__save-button.css ***!
+  \*****************************************************************************************************************************************************************************************/
+.popup-card__save-button {
+}
+
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-card/__title/popup-card__title.css ***!
+  \*****************************************************************************************************************************************************************************/
+.popup-card__title {
+}
+
+/*!****************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-image/popup-image.css ***!
+  \****************************************************************************************************************************************************************/
+.popup-image {
+	
+}
+
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-image/__container/popup-image__container.css ***!
+  \***************************************************************************************************************************************************************************************/
+.popup-image__container {
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    max-height: calc(100vh - 130px);
+    max-width: calc(100vw - 80px);
+    align-self: center;
+}
+
+@media screen and (min-width: 500px) {
+    .popup-image__container {
+        max-height: calc(100vh - 130px);
+        max-width: calc(100vw - 160px);
+    }
+}
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-image/__image/popup-image__image.css ***!
+  \*******************************************************************************************************************************************************************************/
+.popup-image__image {
+    object-fit: scale-down;
+    max-height: 75vh;
+    max-width: 75vw;
+}
+
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-image/__subtitle/popup-image__subtitle.css ***!
+  \*************************************************************************************************************************************************************************************/
+.popup-image__subtitle {
+    display: flex;
+    align-self: flex-start;
+    margin: 0;
+    padding: 10px 0 0 0;
+    color: white;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+/*!******************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-avatar/popup-avatar.css ***!
+  \******************************************************************************************************************************************************************/
+.popup-avatar {
+	
+}
+
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-avatar/__container/popup-avatar__container.css ***!
+  \*****************************************************************************************************************************************************************************************/
+.popup-avatar__container {
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 88%;
+    padding: 25px 22px;
+    align-self: center;
+}
+
+@media screen and (min-width: 500px) {
+    .popup-avatar__container {
+        width: 430px;
+        padding: 34px 36px;
+    }
+}
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-avatar/__form/popup-avatar__form.css ***!
+  \*******************************************************************************************************************************************************************************/
+.popup-avatar__form {
+}
+
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-avatar/__input/popup-avatar__input.css ***!
+  \*********************************************************************************************************************************************************************************/
+.popup-avatar__input {
+}
+
+/*!*********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-avatar/__save-button/popup-avatar__save-button.css ***!
+  \*********************************************************************************************************************************************************************************************/
+.popup-avatar__save-button {
+}
+
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup-avatar/__title/popup-avatar__title.css ***!
+  \*********************************************************************************************************************************************************************************/
+.popup-card__title {
+}
+
+/*!************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/input-animation/input-animation.css ***!
+  \************************************************************************************************************************************************************************/
+.input-animation {
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    transition: padding 0.3s;
+}
+
+.input-animation:focus {
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition: padding 0.3s;
+}
+/*!*********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/pages/index.css ***!
+  \*********************************************************************************************************************************************/
+
