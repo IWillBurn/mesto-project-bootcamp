@@ -13,7 +13,6 @@ let me;
 
 const popups = document.querySelectorAll(".popup");
 
-const cardPopup = document.querySelector(".popup-card");
 const cardPopupForm = document.querySelector(".popup-card__form");
 const cardAddButton = document.querySelector(".profile__add-button");
 
@@ -39,7 +38,11 @@ getMe().then(async (result) => {
             })
             addCard(createCard(card.name, card.link, card.likes.length, card._id, isLikeActive, isOwner));
         })
+    }).catch(async (error) => {
+        console.log(error);
     })
+}).catch(async (error) => {
+    console.log(error);
 })
 
 // Общая настройка popup-ов

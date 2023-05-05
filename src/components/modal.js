@@ -91,9 +91,12 @@ export function handleProfileFormSubmit(event) {
     setSaving(profilePopup);
     patchMe({ name: profilePopupInputName.value, about: profilePopupInputAboutMe.value }).then(async (result) => {
         setProfileData(result.name, result.about);
+    }).catch(async (error) => {
+        console.log(error);
+    }).finally(async () => {
         setSave(profilePopup);
+        closePopup(profilePopup);
     })
-    closePopup(profilePopup);
 }
 
 // Установить данные профиля
@@ -108,10 +111,12 @@ export function handleCardFormSubmit(event) {
     setSaving(cardPopup);
     postCard({ name: cardInputCardName.value, link: cardInputImageLink.value }).then(async (result) => {
         addCard(createCard(result.name, result.link, result.likes.length, result._id, false, true));
+    }).catch(async (error) => {
+        console.log(error);
+    }).finally(async () => {
         setSave(cardPopup);
+        closePopup(cardPopup);
     })
-    clearFormInputs(cardPopupForm)
-    closePopup(cardPopup);
 }
 
 // Обработка формы изменения аватара
@@ -120,10 +125,12 @@ export function handleAvatarFormSubmit(event) {
     setSaving(avatarPopup);
     patchAvatar({ avatar: avatarPopupInputLink.value }).then(async (result) => {
         setAvatarImage(result.avatar);
+    }).catch(async (error) => {
+        console.log(error);
+    }).finally(async () => {
         setSave(avatarPopup);
+        closePopup(avatarPopup);
     })
-    clearFormInputs(avatarPopupForm);
-    closePopup(avatarPopup);
 }
 
 // Установить данные профиля

@@ -14,6 +14,8 @@ const imagePopupSubtitle = document.querySelector(".popup-image__subtitle");
 const removeCard = (card) => {
     deleteCard(card.dataset.id).then(async (result) => {
         card.remove()
+    }).catch(async (error) => {
+        console.log(error);
     })
 };
 
@@ -37,14 +39,19 @@ const updateLikeStatus = (likeButton, cardId, likeCounter) => {
     if (likeButton.classList.contains("elements__element-like_pressed")) {
         deleteLike(cardId).then(async (result) => {
             updateLikeCounter(likeCounter, result.likes.length);
+            toggleLikeStatus(likeButton);
+        }).catch(async (error) => {
+            console.log(error);
         })
     }
     else {
         putLike(cardId).then(async (result) => {
             updateLikeCounter(likeCounter, result.likes.length);
+            toggleLikeStatus(likeButton);
+        }).catch(async (error) => {
+            console.log(error);
         })
     }
-    toggleLikeStatus(likeButton)
 }
 
 // Обновление количества лайков
